@@ -1,3 +1,8 @@
+const totalCountEl = document.getElementById("total-count");
+const interviewCountEl = document.getElementById("interview-count");
+const rejectedCountEl = document.getElementById("rejected-count");
+const availableJobEl = document.getElementById("available-job");
+
 const allFilterBtn = document.getElementById("all-filter-btn");
 const interviewFilterBtn = document.getElementById("interview-filter-btn");
 const rejectedFilterBtn = document.getElementById("rejected-filter-btn");
@@ -64,3 +69,28 @@ rejectedFilterBtn.addEventListener("click", function () {
   allJobsSection.classList.add("hidden");
   filteredSection.classList.remove("hidden");
 });
+
+function updateCounts() {
+  const allCards = document.querySelectorAll(".card");
+  const totalJobs = allCards.length;
+  totalCountEl.textContent = totalJobs;
+  availableJobEl.textContent = totalJobs;
+
+  let interviewCount = 0;
+  let rejectedCount = 0;
+
+  allCards.forEach((card) => {
+    const statusBtn = card.querySelector(".job-status-btn");
+    const statusText = statusBtn.textContent.trim();
+    if (statusText === "Interview") {
+      interviewCount++;
+    } else if (statusText === "Rejected") {
+      rejectedCount++;
+    }
+  });
+
+  interviewCountEl.textContent = interviewCount;
+  rejectedCountEl.textContent = rejectedCount;
+}
+
+updateCounts();
