@@ -20,6 +20,29 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
+    <header class="w-[85%] mx-auto pt-6">
+      <h1 class="text-4xl font-medium text-neutral mb-4">
+        Job Application Tracker
+      </h1>
+
+      <!-- stats cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="bg-base-200 p-4 rounded-md text-2xl shadow-sm">
+          <p class="font-medium">Total</p>
+          <p id="total-count" class="font-bold">0</p>
+        </div>
+
+        <div class="bg-base-200 p-4 rounded-md text-2xl shadow-sm">
+          <p class="font-medium">Interview</p>
+          <p id="interview-count" class="font-bold text-green-500">0</p>
+        </div>
+
+        <div class="bg-base-200 p-4 rounded-md text-2xl shadow-sm">
+          <p class="font-medium">Rejected</p>
+          <p id="rejected-count" class="font-bold text-red-500">0</p>
+        </div>
+      </div>
+    </header>
     <script src="Js/script.js"></script>
   </body>
 </html>
